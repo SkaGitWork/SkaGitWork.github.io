@@ -186,8 +186,8 @@ table td {
 }
 
 table td:hover {
-  -webkit-filter: contrast(200%);
-          filter: contrast(200%);
+  -webkit-filter: contrast(125%);
+          filter: contrast(125%);
 }
 
 @media only screen and (max-width: 375px) {
