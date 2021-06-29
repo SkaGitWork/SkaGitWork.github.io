@@ -28,6 +28,8 @@
   background-color: var(--s-background-color);
   -webkit-box-shadow: var(--s-box-shadow);
           box-shadow: var(--s-box-shadow);
+  -webkit-transition: background 0.2s linear;
+  transition: background 0.2s linear;
 }
 
 .equal-color {
@@ -35,6 +37,8 @@
   background-color: var(--e-background-color);
   -webkit-box-shadow: var(--e-box-shadow);
           box-shadow: var(--e-box-shadow);
+  -webkit-transition: background 0.2s linear;
+  transition: background 0.2s linear;
 }
 
 .number-color {
@@ -43,6 +47,8 @@
   -webkit-box-shadow: var(--n-box-shadow);
           box-shadow: var(--n-box-shadow);
   font-size: 32px;
+  -webkit-transition: background 0.2s linear;
+  transition: background 0.2s linear;
 }
 
 .typo {

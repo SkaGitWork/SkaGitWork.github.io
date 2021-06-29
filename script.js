@@ -1,5 +1,4 @@
-var circle = document.getElementsByClassName("circle")[0];
-
+/* ---------------------------------- Data ---------------------------------- */
 const background_color = "--background-color";
 const toggle_color = "--toggle-color";
 const screen_color = "--screen-color";
@@ -84,6 +83,11 @@ const theme_3 = [
   "0 3px hsl(290, 70%, 36%)",
 ];
 
+// All Themes
+const all_themes = [theme_1, theme_2, theme_3];
+
+/* ---------------------------------- Initilization ---------------------------------- */
+
 // Changes theme
 function change_theme(theme) {
   for (let i = 0; i < properties.length; i++) {
@@ -91,25 +95,43 @@ function change_theme(theme) {
   }
 }
 
-// Move the toggle and theme change
-function toggle_position() {
-  if (circle.classList.contains("circle--position-1")) {
-    circle.classList.remove("circle--position-1");
-    circle.classList.add("circle--position-2");
-    change_theme(theme_2);
-  } else if (circle.classList.contains("circle--position-2")) {
-    circle.classList.remove("circle--position-2");
-    circle.classList.add("circle--position-3");
-    change_theme(theme_3);
-  } else {
-    circle.classList.remove("circle--position-3");
-    circle.classList.add("circle--position-1");
-    change_theme(theme_1);
-  }
+// Get localStorage
+var circle_position;
+if (localStorage.getItem("circle_position") != null) {
+  circle_position = parseInt(localStorage.getItem("circle_position"));
+} else {
+  circle_position = 0;
 }
 
-change_theme(theme_1);
+// Set theme
+change_theme(all_themes[circle_position]);
+
+// Set circle position
+var circle = document.getElementsByClassName("circle")[0];
+circle.style.transform = "translateX(" + circle_position * 150 + "%)";
+
+
+/* --------------------------------- Toggle --------------------------------- */
+// Toggle Listen to click
 document.getElementById("bar").addEventListener("click", toggle_position);
+// Move the toggle and theme change
+function toggle_position() {
+
+  // Reset list
+  if (circle_position == 2) {
+    circle_position = -1;
+  }
+  
+  circle_position++;
+
+  // Move Circle
+  circle.style.transform = "translateX(" + circle_position * 150 + "%)";
+
+  // Change Theme and stores circle position
+  change_theme(all_themes[circle_position]);
+  localStorage.setItem("circle_position", circle_position);
+}
+
 
 /* --------------------------------- Numpad --------------------------------- */
 // Getting display
@@ -119,10 +141,10 @@ const display = document.getElementById("js-display");
 var buttons = document.getElementsByClassName("number-color");
 
 Object.keys(buttons).forEach(function (key) {
-  buttons[key].addEventListener("click", _ => {
+  buttons[key].addEventListener("click", (_) => {
     if (
-      ((display.textContent + buttons[key].innerHTML).length < 12 &&
-      (display.innerHTML != "Overflow"))
+      (display.textContent + buttons[key].innerHTML).length < 12 &&
+      display.innerHTML != "Overflow"
     ) {
       display.textContent += buttons[key].innerHTML;
     }
@@ -133,8 +155,10 @@ Object.keys(buttons).forEach(function (key) {
 const delete_button = document.getElementById("js-delete");
 delete_button.addEventListener("click", (_) => {
   if (display.innerHTML != "Overflow") {
-    display.textContent = display.innerHTML.substr(0, display.innerHTML.length -1);
-    
+    display.textContent = display.innerHTML.substr(
+      0,
+      display.innerHTML.length - 1
+    );
   }
 });
 
@@ -151,9 +175,7 @@ equal_button.addEventListener("click", (_) => {
 
   if (eval(content).toString().length < 12) {
     display.textContent = eval(content);
-  }else{
+  } else {
     display.innerHTML = "Overflow";
   }
 });
-
-

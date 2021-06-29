@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan&display=swap');
+
+/* ------------------------- Theme Background color ------------------------ */
+.bg-color {
+  background-color: var(--background-color);
+	transition: background 0.2s linear;
+}
+.toggle-color {
+  background-color: var(--toggle-color);
+  	transition: background 0.2s linear;
+
+}
+.screen-color {
+  background-color: var(--screen-color);
+  	transition: background 0.2s linear;
+
+}
+
+/* --------------------------------- Theme -------------------------------- */
+.text-color{
+  color: var(--text-color);
+}
+
+.special-command-color {
+  color: var(--s-color);
+  background-color: var(--s-background-color);
+  box-shadow: var(--s-box-shadow);
+    	transition: background 0.2s linear;
+
+}
+
+.equal-color {
+  color: var(--e-color);
+  background-color: var(--e-background-color);
+  box-shadow: var(--e-box-shadow);
+    	transition: background 0.2s linear;
+
+}
+
+.number-color {
+  color: var(--n-color);
+  background-color: var(--n-background-color);
+  box-shadow: var(--n-box-shadow);
+  font-size: 32px;
+    	transition: background 0.2s linear;
+
+}
+
+.typo {
+  font-size: 32px;
+  font-weight: 700;
+}
