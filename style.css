@@ -1,0 +1,199 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan&display=swap");
+/* ------------------------- Theme Background color ------------------------ */
+.bg-color {
+  background-color: var(--background-color);
+  -webkit-transition: background 0.2s linear;
+  transition: background 0.2s linear;
+}
+
+.toggle-color {
+  background-color: var(--toggle-color);
+  -webkit-transition: background 0.2s linear;
+  transition: background 0.2s linear;
+}
+
+.screen-color {
+  background-color: var(--screen-color);
+  -webkit-transition: background 0.2s linear;
+  transition: background 0.2s linear;
+}
+
+/* --------------------------------- Theme -------------------------------- */
+.text-color {
+  color: var(--text-color);
+}
+
+.special-command-color {
+  color: var(--s-color);
+  background-color: var(--s-background-color);
+  -webkit-box-shadow: var(--s-box-shadow);
+          box-shadow: var(--s-box-shadow);
+}
+
+.equal-color {
+  color: var(--e-color);
+  background-color: var(--e-background-color);
+  -webkit-box-shadow: var(--e-box-shadow);
+          box-shadow: var(--e-box-shadow);
+}
+
+.number-color {
+  color: var(--n-color);
+  background-color: var(--n-background-color);
+  -webkit-box-shadow: var(--n-box-shadow);
+          box-shadow: var(--n-box-shadow);
+  font-size: 32px;
+}
+
+.typo {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+* {
+  font-family: "Spartan", sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+.main {
+  height: 100vh;
+  margin: auto;
+  min-width: 550px;
+}
+
+/* -------------------------------- Container ------------------------------- */
+.main-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 500px;
+  margin: auto;
+}
+
+/* --------------------------------- Header --------------------------------- */
+#header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  height: 3em;
+  margin-top: 1em;
+}
+
+.theme-panel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.theme-panel__switcher-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-left: 0.5em;
+  width: 75px;
+}
+
+.theme-panel__switcher-list ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  list-style-type: none;
+}
+
+#bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 200px;
+  height: 1.5em;
+  width: 75px;
+}
+
+.circle {
+  border-radius: 50%;
+  height: 1em;
+  width: 1em;
+  -webkit-box-shadow: 0 0;
+          box-shadow: 0 0;
+  position: relative;
+  left: 5px;
+  -webkit-transition: -webkit-transform 0.2s linear;
+  transition: -webkit-transform 0.2s linear;
+  transition: transform 0.2s linear;
+  transition: transform 0.2s linear, -webkit-transform 0.2s linear;
+}
+
+.circle--position-2 {
+  -webkit-transform: translateX(150%);
+          transform: translateX(150%);
+}
+
+.circle--position-3 {
+  -webkit-transform: translateX(300%);
+          transform: translateX(300%);
+}
+
+/* --------------------------------- Display -------------------------------- */
+.display {
+  text-align: right;
+  border-radius: 0.3em;
+  margin: 1em 0 1em 0;
+  padding: 0.8em;
+  font-size: 1.5em;
+  height: 2em;
+}
+
+/* --------------------------------- Number --------------------------------- */
+table {
+  border-spacing: 15px;
+  border-radius: 0.5em;
+}
+
+table td {
+  line-height: 40px;
+  text-align: center;
+  border-radius: 5px;
+  padding: 10px;
+  padding-top: 16px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  width: 50px;
+}
+
+table td:hover {
+  -webkit-filter: contrast(200%);
+          filter: contrast(200%);
+}
+
+@media only screen and (max-width: 375px) {
+  /* -------------------------------- Container ------------------------------- */
+  .main-container {
+    width: 300px;
+  }
+}
+/*# sourceMappingURL=style.css.map */

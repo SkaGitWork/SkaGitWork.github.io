@@ -1,12 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  Test
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Calculator</title>
+  </head>
+  
+  <body class='bg-color'>
+    <div class="main">
+      <div class="main-container">
+        <!-- ------------------------------- Header -------------------------------- -->
+        <div id="header">
+          <h2 class="text-color">Calculator</h2>
+
+          <div class="theme-panel text-color">
+            <p>THEME</p>
+
+            <div class="theme-panel__switcher-list">
+              <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+              </ul>
+
+              <!-- Toggle Bar -->
+              <div id="bar" class="toggle-color">
+                <div
+                  class="circle circle--position-1 equal-color"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ------------------------------- Display ------------------------------- -->
+        <div class="display text-color screen-color">
+          <h1 id="js-display" class='text-color'></h1>
+        </div>
+        <!-- ------------------------------- Keypad -------------------------------- -->
+        <table class="control-panel toggle-color" id='js-table'>
+          <tr>
+            <td class="number-color">7</td>
+            <td class="number-color">8</td>
+            <td class="number-color">9</td>
+            <td class="special-command-color" id='js-delete'>DEL</td>
+          </tr>
+          <tr>
+            <td class="number-color">4</td>
+            <td class="number-color">5</td>
+            <td class="number-color">6</td>
+            <td class="number-color">+</td>
+          </tr>
+          <tr>
+            <td class="number-color">1</td>
+            <td class="number-color">2</td>
+            <td class="number-color">3</td>
+            <td class="number-color">-</td>
+          </tr>
+          <tr>
+            <td class="number-color">.</td>
+            <td class="number-color">0</td>
+            <td class="number-color">/</td>
+            <td class="number-color">x</td>
+          </tr>
+          <tr>
+            <td colspan="2" class="special-command-color" id='js-reset'>RESET</td>
+            <td colspan="2" class="equal-color" id='js-equal'>=</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </body>
+  <script src="script.js"></script>
 </html>

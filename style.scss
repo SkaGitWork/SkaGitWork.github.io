@@ -1,0 +1,115 @@
+@import "./variables_and_classes";
+
+* {
+  font-family: "Spartan", sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+.main {
+  height: 100vh;
+  margin: auto;
+  min-width: 550px;
+}
+
+/* -------------------------------- Container ------------------------------- */
+.main-container {
+  display: flex;
+  flex-direction: column;
+
+  width: 500px;
+  margin: auto;
+}
+
+/* --------------------------------- Header --------------------------------- */
+
+#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  height: 3em;
+  margin-top: 1em;
+}
+
+.theme-panel {
+  display: flex;
+  align-items: flex-end;
+
+  &__switcher-list {
+    display: flex;
+    flex-direction: column;
+    margin-left: 0.5em;
+    width: 75px;
+
+    & ul {
+      display: flex;
+      justify-content: space-around;
+      list-style-type: none;
+    }
+  }
+}
+
+#bar {
+  display: flex;
+  align-items: center;
+  border-radius: 200px;
+  height: 1.5em;
+  width: 75px;
+}
+
+.circle {
+  border-radius: 50%;
+  height: 1em;
+  width: 1em;
+  box-shadow: 0 0;
+  position: relative;
+  left: 5px;
+  transition: transform 0.2s linear;
+
+  &--position-2 {
+    transform: translateX(150%);
+  }
+
+  &--position-3 {
+    transform: translateX(300%);
+  }
+}
+
+/* --------------------------------- Display -------------------------------- */
+.display {
+  text-align: right;
+  border-radius: 0.3em;
+  margin: 1em 0 1em 0;
+  padding: 0.8em;
+  font-size: 1.5em;
+  height: 2em;
+}
+
+/* --------------------------------- Number --------------------------------- */
+table {
+  border-spacing: 15px;
+  border-radius: 0.5em;
+  
+  & td {
+    line-height: 40px;
+    text-align: center;
+    border-radius: 5px;
+    padding: 10px;
+    padding-top: 16px;
+    user-select: none;
+    width: 50px;
+
+    &:hover{
+      // background-color: red;
+      filter: contrast(200%);
+    }
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  /* -------------------------------- Container ------------------------------- */
+  .main-container {
+    width: 300px;
+  }
+}
